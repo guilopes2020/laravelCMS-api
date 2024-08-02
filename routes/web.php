@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Site\SiteHomeController;
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\Auth\LoginController;
+use App\Http\Controllers\Admin\Auth\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +17,15 @@ use App\Http\Controllers\Admin\Auth\LoginController;
 |
 */
 
-Route::get('/', [SiteHomeController::class, 'index']);
+Route::get('/', [SiteHomeController::class, 'index'])->name('initial');
 
 Route::prefix('painel')->group(function() {
     Route::get('/', [AdminHomeController::class, 'index'])->name('admin');
+
     Route::get('login', [LoginController::class, 'index'])->name('login');
+    Route::post('login', [LoginController::class, 'authenticate']);
+    Route::post('logout', [LoginController::class, 'logout'])->name('logout');
+
+    Route::get('register', [RegisterController::class, 'index'])->name('register');
+    Route::post('register', [RegisterController::class, 'register']);
 });
