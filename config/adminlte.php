@@ -214,15 +214,15 @@ return [
     |
     */
 
-    'sidebar_mini' => 'lg',
-    'sidebar_collapse' => false,
-    'sidebar_collapse_auto_size' => false,
-    'sidebar_collapse_remember' => false,
+    'sidebar_mini'                            => 'lg',
+    'sidebar_collapse'                        => false,
+    'sidebar_collapse_auto_size'              => false,
+    'sidebar_collapse_remember'               => false,
     'sidebar_collapse_remember_no_transition' => true,
-    'sidebar_scrollbar_theme' => 'os-theme-light',
-    'sidebar_scrollbar_auto_hide' => 'l',
-    'sidebar_nav_accordion' => true,
-    'sidebar_nav_animation_speed' => 300,
+    'sidebar_scrollbar_theme'                 => 'os-theme-light',
+    'sidebar_scrollbar_auto_hide'             => 'l',
+    'sidebar_nav_accordion'                   => true,
+    'sidebar_nav_animation_speed'             => 300,
 
     /*
     |--------------------------------------------------------------------------
@@ -236,12 +236,12 @@ return [
     |
     */
 
-    'right_sidebar' => false,
-    'right_sidebar_icon' => 'fas fa-cogs',
-    'right_sidebar_theme' => 'dark',
-    'right_sidebar_slide' => true,
-    'right_sidebar_push' => true,
-    'right_sidebar_scrollbar_theme' => 'os-theme-light',
+    'right_sidebar'                     => false,
+    'right_sidebar_icon'                => 'fas fa-cogs',
+    'right_sidebar_theme'               => 'dark',
+    'right_sidebar_slide'               => true,
+    'right_sidebar_push'                => true,
+    'right_sidebar_scrollbar_theme'     => 'os-theme-light',
     'right_sidebar_scrollbar_auto_hide' => 'l',
 
     /*
@@ -256,14 +256,14 @@ return [
     |
     */
 
-    'use_route_url' => false,
-    'dashboard_url' => 'painel',
-    'logout_url' => 'painel/logout',
-    'login_url' => 'painel/login',
-    'register_url' => 'painel/register',
+    'use_route_url'      => false,
+    'dashboard_url'      => 'painel',
+    'logout_url'         => 'painel/logout',
+    'login_url'          => 'painel/login',
+    'register_url'       => 'painel/register',
     'password_reset_url' => 'password/reset',
     'password_email_url' => 'password/email',
-    'profile_url' => false,
+    'profile_url'        => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -277,9 +277,9 @@ return [
     |
     */
 
-    'enabled_laravel_mix' => false,
+    'enabled_laravel_mix'  => false,
     'laravel_mix_css_path' => 'css/app.css',
-    'laravel_mix_js_path' => 'js/app.js',
+    'laravel_mix_js_path'  => 'js/app.js',
 
     /*
     |--------------------------------------------------------------------------
@@ -311,81 +311,26 @@ return [
             'text' => 'search',
         ],
         [
-            'text' => 'blog',
-            'url' => 'admin/blog',
-            'can' => 'manage-blog',
+            'text' => 'Dashboard',
+            'url'  => 'painel',
+            'icon' => 'far fa-fw fa-file',
         ],
         [
-            'text' => 'pages',
-            'url' => 'admin/pages',
+            'text' => 'Minhas Páginas',
+            'url'  => 'painel/pages',
             'icon' => 'far fa-fw fa-file',
-            'label' => 4,
-            'label_color' => 'success',
+        ],
+        [
+            'text' => 'Meus Usuários',
+            'url'  => 'painel/users',
+            'icon' => 'far fa-fw fa-file',
+            'can'  => 'edit-users',
         ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
-            'url' => 'admin/settings',
+            'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'change_password',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text' => 'multilevel',
-            'icon' => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                ],
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                        ],
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                ],
-            ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text' => 'important',
-            'icon_color' => 'red',
-            'url' => '#',
-        ],
-        [
-            'text' => 'warning',
-            'icon_color' => 'yellow',
-            'url' => '#',
-        ],
-        [
-            'text' => 'information',
-            'icon_color' => 'cyan',
-            'url' => '#',
         ],
     ],
 

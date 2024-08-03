@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Site\SiteHomeController;
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\Auth\LoginController;
@@ -28,4 +29,6 @@ Route::prefix('painel')->group(function() {
 
     Route::get('register', [RegisterController::class, 'index'])->name('register');
     Route::post('register', [RegisterController::class, 'register']);
+
+    Route::resource('users', UserController::class);
 });
