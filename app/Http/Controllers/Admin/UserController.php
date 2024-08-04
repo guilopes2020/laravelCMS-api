@@ -57,7 +57,7 @@ class UserController extends Controller
         $data['password'] = Hash::make($data['password']);
         $user = User::create($data);
 
-        return redirect()->route('users.index', ['user' => $user]);
+        return redirect()->route('users.index', ['user' => $user])->with('warning', 'usuário criado com sucesso!');
     }
 
     /**
@@ -138,7 +138,7 @@ class UserController extends Controller
         
         $user->save();
 
-        return redirect()->route('users.index', ['user' => $user]);
+        return redirect()->route('users.index', ['user' => $user])->with('warning', 'informações do usuário alteradas com sucesso!');
     }
 
     /**
@@ -155,7 +155,7 @@ class UserController extends Controller
         $user = User::find($id);
         $user->delete();
         
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->with('warning', 'usuário removido com sucesso!');
     }
 
     private function validatorCreate($data)
