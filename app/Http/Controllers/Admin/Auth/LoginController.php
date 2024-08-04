@@ -53,7 +53,7 @@ class LoginController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect()->route('initial');
+        return redirect()->route('login');
     }
 
     protected function validator(array $data)
