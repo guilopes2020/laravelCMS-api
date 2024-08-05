@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\SettingController;
@@ -33,6 +34,7 @@ Route::prefix('painel')->group(function() {
     Route::post('register', [RegisterController::class, 'register']);
 
     Route::resource('users', UserController::class);
+    Route::resource('pages', PageController::class);
 
     
     Route::get('profile', [ProfileController::class, 'index'])->name('profile');
